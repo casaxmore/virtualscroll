@@ -1,10 +1,32 @@
 <h3>Virtual Scroll</h3>
 <hr>
 
+<div class="row">
+  <div class="col">
+    <button class="btn btn-primary"
+      (click)="irFinal()">
+      Ir al final
+    </button>
+    &nbsp;&nbsp;
+    <button class="btn btn-warning"
+      (click)="irMitad()">
+      Ir a la mitad
+    </button>
+    &nbsp;&nbsp;
+    <button class="btn btn-success"
+      (click)="irInicio()">
+      Ir al inicio
+    </button>
+  </div>
+</div>
+
+
+<br><br>
+
 <!-- Elemento personalizado, es necesario poner el ancho que va a tener cada item. itemSize="" -->
 <cdk-virtual-scroll-viewport itemSize="50" class="list-container list-group">
   <!-- Incluimos *cdkVirtualFor que funciona como el for -->
-  <div class="list-group-item" *cdkVirtualFor="let persona of personas; let i = index; let conteo = count">
+  <div class="list-group-item animated bounceInLeft" *cdkVirtualFor="let persona of personas; let i = index; let conteo = count">
     Item {{ i+1 }} / {{ conteo }} / {{ persona }}
   </div>
 

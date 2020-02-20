@@ -1,0 +1,12 @@
+<h3>Virtual Scroll</h3>
+<hr>
+
+<!-- Elemento personalizado, es necesario poner el ancho que va a tener cada item. itemSize="" -->
+<cdk-virtual-scroll-viewport itemSize="50" class="list-container list-group">
+  <!-- Incluimos *cdkVirtualFor que funciona como el for -->
+  <div class="list-group-item" *cdkVirtualFor="let persona of personas; let i = index; let conteo = count">
+    Item {{ i+1 }} / {{ conteo }} / {{ persona }}
+  </div>
+
+</cdk-virtual-scroll-viewport>
+
